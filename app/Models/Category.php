@@ -18,4 +18,6 @@ class Category extends Model
     {
         return $this->hasMany(Task::class);
     }
+        
 }
+$table->foreignId('user_id')->constrained()->cascadeOnDelete();

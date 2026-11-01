@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('title');       // タスクのタイトル
-            $table->text('description')->nullable(); // タスクの詳細（空でもOK）
-            $table->boolean('is_completed')->default(false); // 完了フラグ（初期値:未完了）
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->unsignedTinyInteger('priority')->default(2);
             $table->timestamps();
-            $table->foreignId('user_id');;
         });
     }
 
