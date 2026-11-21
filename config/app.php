@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'name' => env('APP_NAME', 'Laravel'),
+'env' => env('APP_ENV', 'production'),
+'debug' => (bool) env('APP_DEBUG', false),
+'url' => env('APP_URL', 'http://localhost'),
+'key' => env('APP_KEY'),
+'locale' => env('APP_LOCALE', 'ja'),
+'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+'cipher' => 'AES-256-CBC',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +62,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
-
     ],
 
 ];
