@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
+
+    // 追加：Categoryは多くのTaskを持つ (1対多)
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+        
+}
+$table->foreignId('user_id')->constrained()->cascadeOnDelete();
